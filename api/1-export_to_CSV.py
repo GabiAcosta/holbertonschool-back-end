@@ -25,7 +25,7 @@ if __name__ == "__main__":
 
     with open('{}.csv'.format(argv[1]), 'w', encoding='UTF=8') as f:
 
-        writer = csv.writer(f)
+        writer = csv.writer(f, quoting=csv.QUOTE_ALL)
         for task in user_todo:
             writer.writerow([user["id"], user["username"], task["completed"],
                              task["title"]])
