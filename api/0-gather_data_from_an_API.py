@@ -29,7 +29,7 @@ if __name__ == "__main__":
             not_completed += 1
 
     print(f"Employee {user['name']} is done with tasks"
-        f"({completed}/{not_completed + completed}):")
+          f"({completed}/{not_completed + completed}):")
     for task in user_todo:
         if task["completed"]:
             print(f'\t {task["title"]}')
