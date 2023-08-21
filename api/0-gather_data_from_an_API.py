@@ -4,15 +4,15 @@
 This script retrieves information about a user's completed and incomplete tasks
 using the jsonplaceholder.typicode.com API.
 """
-import requests
 import json
+import requests
 from sys import argv
 
 if __name__ == "__main__":
-    
+
     if len(argv) != 2:
         exit()
-        
+
     user_req = requests.get(
         'https://jsonplaceholder.typicode.com/users/{}'.format(argv[1]))
     user = json.loads(user_req.text)
@@ -28,7 +28,7 @@ if __name__ == "__main__":
         else:
             not_completed += 1
 
-    print(f"Employee {user['name']} is done with tasks "
+    print(f"Employee {user['name']} is done with tasks"
         f"({completed}/{not_completed + completed}):")
     for task in user_todo:
         if task["completed"]:
