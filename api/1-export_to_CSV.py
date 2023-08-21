@@ -23,7 +23,7 @@ if __name__ == "__main__":
         'https://jsonplaceholder.typicode.com/todos?userId={}'.format(argv[1]))
     user_todo = json.loads(user_todo_req.text)
 
-    with open('{}'.format(argv[1]), 'w', encoding='UTF=8') as f:
+    with open('{}.csv'.format(argv[1]), 'w', encoding='UTF=8') as f:
 
         writer = csv.writer(f)
         for task in user_todo:
