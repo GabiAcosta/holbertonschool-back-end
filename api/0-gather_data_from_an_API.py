@@ -8,6 +8,9 @@ import requests
 import json
 from sys import argv
 
+
+if len(argv) != 2:
+    exit()
 user_req = requests.get(
     'https://jsonplaceholder.typicode.com/users/{}'.format(argv[1]))
 user = json.loads(user_req.text)
